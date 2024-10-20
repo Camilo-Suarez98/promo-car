@@ -1,13 +1,19 @@
 "use client";
 import React, { useState } from 'react';
+
+import { useFecthCities, useFetchDepartments } from '@/lib/colombia-data';
 import Input from './Input';
-import { useFetchDepartments } from '@/lib/colombia-data';
-import Select from './Select';
+import SelectDepartment from './SelectDepartment';
+import SelectCity from './SelectCity';
 
 const RegistrationForm = () => {
   const [sendCode, setSendCode] = useState(false);
   const [message, setMessage] = useState("");
-  const { data, error, loading } = useFetchDepartments();
+  const [department, setDepartment] = useState('');
+  const { departmentdata, departmentsError, loading } = useFetchDepartments();
+  const { citiesData, citiesError, loadingCities } = useFecthCities(department);
+
+  console.log(citiesData);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +24,8 @@ const RegistrationForm = () => {
     setMessage(newMessage);
   };
 
-  if (error) return <p>Hubo un error al cargar la información, por favor recargue la página</p>
+  if (departmentsError) return <p>Hubo un error al cargar los departamentos</p>;
+  if (citiesError) return <p>Hubo un error al cargar los municipios</p>;
 
   return (
     <div>
@@ -41,8 +48,16 @@ const RegistrationForm = () => {
             placeholder="123456789"
             type="number"
           />
-          <Select departmentsData={data} loading={loading} />
-          <select>Ciudad</select>
+          <SelectDepartment
+            departmentsData={departmentdata}
+            loading={loading}
+            setDepartmentSelected={(setDepartment)}
+          />
+          <SelectCity
+            citiesData={citiesData}
+            loading={loadingCities}
+            departmentSelected={department}
+          />
           <Input
             nameLabel="Celular"
             placeholder="3200000000"
@@ -53,11 +68,13 @@ const RegistrationForm = () => {
             placeholder="carlossanchez@correo.com"
             type="email"
           />
-          <input type="checkbox" required />
-          <p>
-            Autorizo el tratamiento de mis datos de acuerdo con la
-            finalidad establecida en la política de protección de datos personales.
-          </p>
+          <div className='flex'>
+            <input type="checkbox" required />
+            <p>
+              Autorizo el tratamiento de mis datos de acuerdo con la
+              finalidad establecida en la política de protección de datos personales.
+            </p>
+          </div>
           <button type="submit">Registrarse</button>
         </form>
       }
