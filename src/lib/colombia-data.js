@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const url = 'https://www.datos.gov.co/resource/xdk5-pm3f.json';
 
 export const useFetchDepartments = () => {
-  const [data, setData] = useState([]);
+  const [departmentdata, setDepartmentData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const [departmentsError, setDepartmentsError] = useState();
 
   useEffect(() => {
     const fetchDepartments = async () => {
@@ -19,9 +19,9 @@ export const useFetchDepartments = () => {
           return res.find(dept => dept.departamento === departmentName);
         });
 
-        setData(filteredDepartments);
+        setDepartmentData(filteredDepartments);
       } catch (error) {
-        setError(error.message)
+        setDepartmentsError(error.message)
       } finally {
         setLoading(false);
       }
@@ -30,7 +30,7 @@ export const useFetchDepartments = () => {
     fetchDepartments();
   }, []);
 
-  return { data, loading, error };
+  return { departmentdata, loading, departmentsError };
 };
 
 export const useFecthCities = () => {
@@ -41,7 +41,7 @@ export const useFecthCities = () => {
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const data = await fetch(`${url}?departamento=${selectedDepartment}`);
+        const data = await fetch(url);
         const res = await data.json();
         setCitiesData(res)
       } catch (error) {
@@ -54,5 +54,5 @@ export const useFecthCities = () => {
     fetchCities();
   }, []);
 
-  return { citiesData, citiesError, loadingCities, selectedDepartment };
+  return { citiesData, citiesError, loadingCities };
 }
