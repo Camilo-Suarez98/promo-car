@@ -154,7 +154,7 @@ const RegistrationForm = () => {
 
         <button
           type="submit"
-          className='bg-[#1a80a3d9] p-3 rounded-md w-full mt-3 text-black font-semibold'
+          className='bg-[#1a80a3d9] p-3 rounded-md w-full mt-3 text-white font-semibold'
         >
           Regístrate
         </button>
