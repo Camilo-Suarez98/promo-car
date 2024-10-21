@@ -8,7 +8,7 @@ const SelectDepartment = ({ departmentsData, loading, setDepartmentSelected }) =
   })
 
   return (
-    <select className='text-black' onChange={(e) => setDepartmentSelected(e.target.value)} required>
+    <select className='w-full py-3 px-4 my-2 bg-[#111827] text-[#f3f4f6] rounded-md border-[1px] border-[#f3f4f6] focus:border-[#1a80a3d9]' onChange={(e) => setDepartmentSelected(e.target.value)} required>
       {
         loading
           ? <option value="">Cargando departamentos</option>
