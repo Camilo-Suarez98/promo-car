@@ -1,38 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Promo-Car - Formulario de registro para sorteo
 
-## Getting Started
+Este proyecto es un minisite funcional desarrollado con Next.js, diseñado para la recolección de datos de clientes actuales de Promo-Car en Bogotá (nombre inventado por el autor del repositorio). El objetivo del minisite es permitir a los usuarios registrarse para participar en un sorteo al completar un formulario que al completarlo le entregará un código único.
 
-First, run the development server:
+## Características del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Regex:** Se hizó uso de las expresiones regulares para verificar que los datos que el usuario ingrese en el formulario sean validos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Docker Compose:** Proyecto entregado con un archivo `docker-compose` configurado para levantar la aplicación.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Para obtener los departamentos y municipios se realizó un fetching de datos de la siguiente URL: https://www.datos.gov.co/resource/xdk5-pm3f.json
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Requisitos Técnicos
 
-## Learn More
+- **Framework:** Next.js
+- **Docker:** Se recomienda tener Docker y Docker Compose instalados para levantar el proyecto.
 
-To learn more about Next.js, take a look at the following resources:
+## Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona este repositorio:
+    ```bash
+    git clone https://github.com/Camilo-Suarez98/promo-car
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. cd promo-car
 
-## Deploy on Vercel
+3. docker-compose up --build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# promo-car
-# promo-car
+## Tecnologías Utilizadas
+- Next.js: [https://nextjs.org/](https://nextjs.org/)
+- React: [https://react.dev/](https://react.dev/)
+- TailwindCSS [https://tailwindcss.com/](https://tailwindcss.com/)
+- Docker: [https://app.docker.com/](https://app.docker.com/)
