@@ -36,23 +36,23 @@ const RegistrationForm = () => {
     const newErrors = {};
 
     if (!formValues.name || !nameRegex.test(formValues.name)) {
-      newErrors.name = 'El nombre es inválido. Solo se permiten letras y espacios.';
+      newErrors.name = 'The name is invalid. Only letters are allowed';
     }
 
     if (!formValues.lastName || !nameRegex.test(formValues.lastName)) {
-      newErrors.lastName = 'El apellido es inválido. Solo se permiten letras y espacios.';
+      newErrors.lastName = 'The surname is invalid. Only letters are allowed';
     }
 
     if (!formValues.document || !documentRegex.test(formValues.document)) {
-      newErrors.document = 'La cédula es inválida. Solo se permiten números.';
+      newErrors.document = 'The document is invalid. Only numbers are allowed';
     }
 
     if (!formValues.phone || !phoneRegex.test(formValues.phone)) {
-      newErrors.phone = 'El celular es inválido. Debe tener 10 dígitos.';
+      newErrors.phone = 'The cellphone is invalid. It must have 10 digits';
     }
 
     if (!formValues.email || !emailRegex.test(formValues.email)) {
-      newErrors.email = 'El correo electrónico es inválido.';
+      newErrors.email = 'The email is invalid.';
     }
 
     setError(newErrors);
@@ -83,8 +83,8 @@ const RegistrationForm = () => {
     <div className='w-full'>
       <form className='p-4 bg-[#111827] text-[#f3f4f6] rounded-xl md:p-8' onSubmit={handleSubmit}>
         <Input
-          nameLabel="Nombre"
-          placeholder="Carlos"
+          nameLabel="Name"
+          placeholder="Charles"
           inputName="name"
           type="text"
           value={formValues.name}
@@ -93,8 +93,8 @@ const RegistrationForm = () => {
         {error.name && <p className="text-red-500">{error.name}</p>}
 
         <Input
-          nameLabel="Apellido"
-          placeholder="Sanchez"
+          nameLabel="Surname"
+          placeholder="Gardfield"
           inputName="lastName"
           type="text"
           value={formValues.lastName}
@@ -103,7 +103,7 @@ const RegistrationForm = () => {
         {error.lastName && <p className="text-red-500">{error.lastName}</p>}
 
         <Input
-          nameLabel="Cédula"
+          nameLabel="Document"
           placeholder="123456789"
           inputName="document"
           type="number"
@@ -125,8 +125,8 @@ const RegistrationForm = () => {
         />
 
         <Input
-          nameLabel="Celular"
-          placeholder="3200000000"
+          nameLabel="Cellphone"
+          placeholder="5555555555"
           inputName="phone"
           type="number"
           value={formValues.phone}
@@ -136,7 +136,7 @@ const RegistrationForm = () => {
 
         <Input
           nameLabel="Email"
-          placeholder="carlossanchez@correo.com"
+          placeholder="charlesgarfield@email.com"
           inputName="email"
           type="email"
           value={formValues.email}
@@ -147,8 +147,8 @@ const RegistrationForm = () => {
         <div className='flex mt-2'>
           <p>
             <input type="checkbox" required />{" "}
-            Autorizo el tratamiento de mis datos de acuerdo con la
-            finalidad establecida en la política de protección de datos personales.
+            I authorise the processing of my personal data in accordance with the purpose
+            purpose set out in the personal data protection policy.
           </p>
         </div>
 
@@ -156,7 +156,7 @@ const RegistrationForm = () => {
           type="submit"
           className='bg-[#1a80a3d9] p-3 rounded-md w-full mt-3 text-white font-semibold'
         >
-          Regístrate
+          Sing up
         </button>
       </form>
     </div>

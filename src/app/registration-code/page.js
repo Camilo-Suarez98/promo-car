@@ -5,14 +5,14 @@ const RegistrationCode = () => {
 
   return (
     <div className='text-center'>
-      <h1 className='text-3xl font-bold mb-4 lg:text-4xl'>¡Gracias por ser un cliente valioso!</h1>
+      <h1 className='text-3xl font-bold mb-4 lg:text-4xl'>Thank you for being a valued customer!</h1>
       <p className='text-gray-400 lg:text-2xl'>
-        Nos complace informarte que te has registrado exitosamente para nuestra oferta exclusiva para clientes actuales.
-        Como agradecimiento por tu confianza, este es tu código único para participar en el sorteo:
+        We are pleased to inform you that you have successfully registered for our exclusive offer for existing customers.
+        As a thank you for your trust, this is your unique code to participate in the raffle:
       </p>
       <p className='text-3xl font-bold mb-4 lg:text-4xl text-[#1a80a3d9]'> {code}</p>
       <p className='text-gray-400 lg:text-2xl mt-4'>
-        No olvides estar atento a nuestros futuros lanzamientos y promociones especiales. ¡Tu lealtad es nuestra inspiración para seguir mejorando!
+        Do not forget to keep an eye out for our future launches and special promotions - your loyalty is our inspiration to keep improving!
       </p>
     </div>
   );
